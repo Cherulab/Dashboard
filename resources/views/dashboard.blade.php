@@ -30,7 +30,13 @@
                 <td class="text-blue-800">{{$users['email']}}</td>
                 <td class="text-red-700">{{$users['salary']}}</td>
                 <td>{{$users['description']}}</td>
-                <td><a href="{{route('viewuser', $users->id)}}" class="text-lime-600 hover:text-blue-600">View</a></td>
+                <td class="flex">
+                    <a href="{{route('viewuser', $users->id)}}" class="text-lime-600 hover:text-blue-600">View</a>
+                    <form action="{{route('deleteuser', $users->id)}}" method="POST">
+                        @csrf
+                        <button type="submit" class="ml-[50%] text-red-700 hover:text-blue-600">Del</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
         </tbody>

@@ -30,6 +30,7 @@
                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                     <dt class="text-sm font-medium text-gray-500">Salary expectation</dt>
                     <input type="text" name='salary' placeholder="Salary" value="{{$user->salary}}">
+                    <p>$</p>
                     </div>
                     <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                     <dt class="text-sm font-medium text-gray-500">About</dt>
@@ -67,12 +68,12 @@
                 </dl>
                 </div>
                 @csrf
-                <button type="submit" class="ml-[50%]">Save</button>
+                <button type="submit" class="ml-[50%] text-emerald-600 hover:text-emerald-400">Save</button>
             </form>
             {{-- DELETE USER --}}
             <form action="{{route('deleteuser', $user->id)}}" method="POST">
                 @csrf
-                <button type="submit">Delete User</button>
+                <button type="submit" class="ml-[50%] text-red-700 hover:text-red-500">Delete User</button>
             </form>
         </div>
         @endsection
