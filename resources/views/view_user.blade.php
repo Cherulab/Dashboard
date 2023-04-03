@@ -76,6 +76,9 @@
                 <button type="submit" class="ml-[50%] text-red-700 hover:text-red-500">Delete User</button>
             </form>
         </div>
+        <div>
+        </div>
+        
         @endsection
     </body>
 </html>

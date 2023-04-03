@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Project;
 use App\Models\User;
+
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -32,4 +35,17 @@ class UserController extends Controller
     public function profil(Request $request){
         return view('dashboard', ['user' => User::all()]);
     }
+    public function userproject(Request $request, $id)
+    {
+        $project = Project::findOrFail($id);
+        $user = $project->user;
+        return view('projects', ['projects' => $user]);
+    }
+    public function viewproject()
+    {
+        $projects = Project::all();
+
+        return view('list_project', ['projects' => $projects]);
+    }
+   
 }
