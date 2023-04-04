@@ -34,7 +34,7 @@
                     <a href="{{route('viewuser', $users->id)}}" class="text-lime-600 hover:text-blue-600">View</a>
                     <form action="{{route('deleteuser', $users->id)}}" method="POST">
                         @csrf
-                        <button type="submit" class="ml-[50%] text-red-700 hover:text-blue-600">Del</button>
+                        <button type="submit" class="ml-[50%] text-red-700 hover:text-blue-600" onclick="return confirm('Are you sure?')">Del</button>
                     </form>
                 </td>
             </tr>

@@ -73,7 +73,7 @@
             {{-- DELETE USER --}}
             <form action="{{route('deleteuser', $user->id)}}" method="POST">
                 @csrf
-                <button type="submit" class="ml-[50%] text-red-700 hover:text-red-500">Delete User</button>
+                <button type="submit" class="ml-[50%] text-red-700 hover:text-red-500" onclick="return confirm('Are you sure?')">Delete User</button>
             </form>
         </div>
         <div>
